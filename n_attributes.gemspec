@@ -15,7 +15,12 @@ Gem::Specification.new do |spec|
 
   spec.rubyforge_project = "n_attributes"
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = ['Gemfile',
+                        'lib/n_attributes/railtie.rb',
+                        'lib/n_attributes/version.rb',
+                        'lib/tasks/n_attributes.rake',
+                        'lib/n_attributes.rb']
+
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
