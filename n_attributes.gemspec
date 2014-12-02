@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ["sohair.ahmad@square63.com"]
   spec.summary       = %q{Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field.}
   spec.description   = %q{Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/Square63/n_attributes"
   spec.license       = "MIT"
+
+  spec.rubyforge_project = "n_attributes"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
