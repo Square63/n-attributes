@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = NAttributes::VERSION
   spec.authors       = ["Sohair Ahmad"]
   spec.email         = ["sohair.ahmad@square63.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field.}
+  spec.description   = %q{Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
