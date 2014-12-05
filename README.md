@@ -31,6 +31,26 @@ TODO: Write usage instructions here
 5. Create a new Pull Request
 
 rake command:
-  rake model=Model field=field_name type=field_type
+  rake add_n_attributes model=Model field=field_name
   e.g.
-  rake model=User field=nickname type=string
+  rake add_n_attributes model=User field=name
+
+model.rb:
+  include NAttributes
+  n_attribute :field_name
+
+e.g.
+
+user.rb:
+  include NAttributes
+  n_attribute :name
+
+Set key value pair:
+
+  Model.field_key = value
+  #=> field = {"key" => "value", ....}
+
+Get value of key:
+
+  Model.field_key
+  #=> value
