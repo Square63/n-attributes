@@ -1,6 +1,6 @@
 # NAttributes
 
-TODO: Write a gem description
+Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field
 
 ## Installation
 
@@ -20,7 +20,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+###rake command:
+
+    $ rake add_n_attributes model=Model field=field_name
+
+  e.g.
+
+    $ rake add_n_attributes model=User field=name
+
+###Model
+
+Include these lines in your model.rb:
+
+    include NAttributes
+    n_attribute :field_name
+
+e.g.
+
+your model is user.rb:
+
+    include NAttributes
+    n_attribute :name
+
+###Setter
+
+set key value pair:
+
+    Model.field_key = value
+    #=> field = {"key" => "value", ....}
+
+###Getter
+
+get value of key:
+
+    Model.field_key
+    #=> value
 
 ## Contributing
 
@@ -29,28 +63,3 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
-
-rake command:
-  rake add_n_attributes model=Model field=field_name
-  e.g.
-  rake add_n_attributes model=User field=name
-
-model.rb:
-  include NAttributes
-  n_attribute :field_name
-
-e.g.
-
-user.rb:
-  include NAttributes
-  n_attribute :name
-
-Set key value pair:
-
-  Model.field_key = value
-  #=> field = {"key" => "value", ....}
-
-Get value of key:
-
-  Model.field_key
-  #=> value
