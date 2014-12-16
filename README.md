@@ -40,7 +40,7 @@ e.g.
 your model is user.rb:
 
     include NAttributes
-    n_attribute :name
+    n_attributes :name
 
 ###Setter
 
