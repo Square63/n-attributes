@@ -15,25 +15,25 @@ module NAttributes
     end
   end
 
-  def method_missing(meth, *args, &block)
-    if meth.present?
-      run_split(meth, *args, &block)
+  def method_missing(method, *args, &block)
+    if method.present?
+      run_split(method, *args, &block)
     else
       super
     end
   end
 
-  def run_split(meth, *args, &block)
-    meth = meth.to_s
-    attribute, key = meth.gsub('=', '').split('_')
+  def run_split(method, *args, &block)
+    method = method.to_s
+    attribute, key = method.gsub('=', '').split('_')
     if args[0].nil?
-      get_key_value(attribute, key)
+      get_value(attribute, key)
     else
-      set_key_pair(attribute, key, args[0])
+      set_key(attribute, key, args[0])
     end
   end
 
-  def set_key_pair(field, key, value)
+  def set_key(field, key, value)
     if self.send(field).nil?
       self.send(field+ '=', Hash[key, value].to_s)
     else
@@ -42,7 +42,7 @@ module NAttributes
     self.save
   end
 
-  def get_key_value(field, key)
+  def get_value(field, key)
     if key.present?
       eval(self.send(field))[key]
     end
