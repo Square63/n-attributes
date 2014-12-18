@@ -48,3 +48,7 @@ module NAttributes
     end
   end
 end
+
+if defined?(ActiveRecord)
+  ActiveRecord::Base.send(:include, NAttributes)
+end
