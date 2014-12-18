@@ -10,7 +10,7 @@ module NAttributes
   module ClassMethods
     def n_attributes(*args)
       args.each do |arg|
-        serialize %(:#{arg})
+        serialize %(:#{arg}), Hash
       end
     end
   end
