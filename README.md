@@ -32,15 +32,13 @@ Or install it yourself as:
 
 Include these lines in your model.rb:
 
-    include NAttributes
-    n_attribute :field_name
+    n_attributes :field_name
 
 e.g.
 
 your model is user.rb:
 
-    include NAttributes
-    n_attribute :name
+    n_attributes :name
 
 ###Setter
 
