@@ -1,6 +1,6 @@
 # NAttributes
 
-Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field
+A gem that allows you to create a field inside a model that allows you to store arbitrary n number of attributes against a specified field
 
 ## Installation
 
