@@ -1,14 +1,12 @@
 # NAttributes
 
-Creates a field inside a model that allows you to store arbitrary n number of attributes against a specified field
+A gem that allows you to create a field inside a model that allows you to store arbitrary n number of attributes against a specified field
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-```ruby
-gem 'n_attributes'
-```
+    gem 'n_attributes'
 
 And then execute:
 
@@ -26,33 +24,61 @@ Or install it yourself as:
 
   e.g.
 
-    $ rake add_n_attributes model=User field=name
+    $ rake add_n_attributes model=User field=address
 
 ###Model
 
 Include these lines in your model.rb:
 
-    n_attributes :field_name
+    n_attribute_keys :field_name, key1, key2, .....
 
 e.g.
 
-your model is user.rb:
+Your model is user.rb:
 
-    n_attributes :name
+    n_attribute_keys :address, :country, :city, ....
 
 ###Setter
 
-set key value pair:
+Set key value pair:
 
-    Model.field_key = value
-    #=> field = {"key" => "value", ....}
+    model.key1 = value1
+    model.key2 = value2
+    #=> field = {"key1" => "value1", ....}
+
+e.g.
+
+    u = User.new
+    u.country = "Pakistan"
+    u.city = "Lahore"
+No need to save, gem will do it for you.
 
 ###Getter
 
-get value of key:
+Get value of key:
 
-    Model.field_key
-    #=> value
+    model.key1
+    #=> value1
+
+    model.key2
+    #=> value2
+
+For all
+
+    model.field_name
+    {"key1" => "value1", ....}
+
+e.g.
+
+    u = User.last
+    u.country
+    #=>Pakistan
+    u.city
+    #=>Lahore
+
+###Note
+
+    This gem only works on a single field in a Model.
 
 ## Contributing
 
