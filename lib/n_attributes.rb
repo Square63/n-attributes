@@ -18,6 +18,8 @@ class Object
 end
 
 module NAttributes
+  require 'n_attributes/railtie' if defined?(Rails)
+
   def self.included(base)
     base.extend(ClassMethods)
   end
